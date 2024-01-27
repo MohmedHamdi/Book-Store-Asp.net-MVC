@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@using bookstore1.Models.Entity;
+@model Author
+@{
+    ViewData["Title"] = "Edit book";
+}
+<form  style="margin:60px;" method="post">
+    <input type="hidden" asp-for="@Model.AuthorId" />
+    <div class="container border cont border-danger ">
+
+        <h1 class="text-danger text-center">Update Book</h1>
+       
+        <div class="form-group row m-4 ">
+            <label asp-for="FirstName" class="col-sm-2 col-form-label col-form-label-sm text-danger">First Name</label>
+            <div class="col-sm-8">
+                <input class="form-control form-control-sm " id="colFormLabelSm" placeholder="Enter Titel of Book" asp-for="FirstName">
+                <span asp-validation-for="FirstName" class="text-black"></span>
+               
+            </div>
+
+
+        </div>
+       
+
+        <div class="form-group row m-4">
+            <label asp-for="LastName" class="col-sm-2 col-form-label text-danger">Last Name</label>
+            <div class="col-sm-8">
+                <input class="form-control" id="colFormLabel" placeholder="Enter Price" asp-for="LastName">
+                <span asp-validation-for="LastName" class="text-dark"></span>
+            </div>
+
+        </div>
+           
+            <hr />
+        <div class="form-group row m-4">
+            <button type="submit" class="btn btn-outline-danger m-1 save" style="width:150px" id="s"><i class="fa-sharp fa-solid fa-pen-to-square"></i></button>
+
+            <a asp-controller="Author" asp-action="Index" class="btn btn-outline-dark back" style="width:200px" id="b"><i class="fa-solid fa-backward m-1 "></i>Back to 
+                Authors</a>
+            </div>
+
+        </div>
+      
+   
+
+</form>
+
+

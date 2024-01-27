@@ -1,0 +1,54 @@
+﻿@using bookstore1.Models.Entity;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<Catogry>
+@{
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+<div class="container " >
+
+
+    <h1 class="col-8">All Catogry</h1>
+    @*  <a asp-controller="Item" asp-action="New" class="btn btn-outline-dark text-capitalize" style="margin:20px 50% 20px 0; "><i class="fa-light fa-trash"></i> &nbsp; Add New Item</a> *@
+    <table class="table table-striped ">
+        <thead class="bg-danger">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Update</th>
+               
+
+
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <th scope="row">@item.CatogryId</th>
+
+                    <td>@item.CatogryName</td>
+                  
+                    <td>
+                         <a asp-action="Edit" asp-controller="Catogry" asp-route-id="@item.CatogryId" class="btn btn-outline-danger"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a> 
+                       @*  <a asp-action="Delet" asp-controller="Catogry"  asp-route-id="@item.CatogryId" class="btn btn-outline-dark"><i class="fa-solid fa-trash"></i></a> *@
+                    </td>
+
+
+
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+    <a asp-action="New" asp-controller="Catogry" class="btn btn-outline-danger" style="margin-bottom:50px;"><i class="fa-solid fa-plus m-1"></i>Add New Catogry</a>
+
+</div>
+
+

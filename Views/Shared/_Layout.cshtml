@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - bookstore1</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/bookstore1.styles.css" asp-append-version="true" />
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body >
+   @*  <header class="head" >
+                <h3 class="text-center">Book Sore</h3>
+
+        <p class=" text-center " >
+            <a asp-action="All" asp-controller="Cart">
+                <i class="fa-solid fa-cart-shopping text-black "  ></i>
+
+
+            </a>
+        </p>
+
+
+
+
+        <p class="text-center">
+            <a asp-controller="books" asp-action="Index">
+                <i class="fa-solid fa-book text-dark" >
+                    <span style="font-size:15px; letter-spacing:1px;">books</span>
+                </i>
+            </a>
+            </p>
+       
+        <p class="text-center">
+            <a  asp-action="Index" asp-controller="Author" >
+                <i class="fa-solid fa-users text-dark" >
+                    <span style="font-size:15px;  letter-spacing:1px;">Author</span>
+                </i>
+            </a>
+            </p>
+
+        <p class="text-center">
+        <a asp-action="Index" asp-controller="Catogry" style="cursor:pointer;">  <i class="fa-sharp fa-solid fa-quote-right text-black">  <span style="font-size:14px; cursor:pointer; letter-spacing:1px;">Catogry</span> </i></a>
+        </p>
+        <p class="text-center" >
+        <partial   name="_LoginPartial.cshtml" />
+        </p>
+    
+    </header>    *@
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-danger border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <h1 class="navbar-and" asp-area="" asp-controller="Home" asp-action="Index">Book Store</h1>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    
+                    <ul class="navbar-nav flex-grow-1">
+                      
+                            
+                      
+                        <li class="nav-item m-4">
+                           @*  <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a> *@
+                            <a class ="nav-link text-dark" asp-controller="books" asp-action="Index">
+                                <i class="fa-solid fa-book text-dark" >
+                                    <span style="font-size:15px; letter-spacing:1px;">books</span>
+                                </i>
+                            </a>
+                        </li>
+                        <li class="nav-item m-4">
+                            <a class="nav-link text-dark" asp-action="Index" asp-controller="Author">
+                                <i class="fa-solid fa-users text-dark">
+                                    <span style="font-size:15px;  letter-spacing:1px;">Author</span>
+                                </i>
+                            </a>
+                        </li>
+                        <li class="nav-item m-4">
+                            <a class="nav-link text-dark" asp-action="Index" asp-controller="Catogry" style="cursor:pointer;">  <i class="fa-sharp fa-solid fa-quote-right text-black">  <span style="font-size:14px; cursor:pointer; letter-spacing:1px;">Catogry</span> </i></a>
+                       
+                        </li>
+                        <li class="nav-item m-4">
+                            <a class="nav-link text-dark" asp-action="All" asp-controller="Cart">
+                                <i class="fa-solid fa-cart-shopping text-black "></i>
+                            </a>
+                        </li>
+                        <li class="nav-item m-4">
+                            <partial class="nav-link text-dark " name="_LoginPartial.cshtml" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+   
+  @*  <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                    <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <span class="fs-5 d-none d-sm-inline">Book Stor</span>
+                    </a>
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a asp-action="All" asp-controller="Cart" href="#" class="nav-link align-middle px-0">
+                                <i class="fa-solid fa-cart-shopping text-black"></i> <span class="ms-1 d-none d-sm-inline">Cart</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-controller="books" asp-action="Index"  href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                <i class="fa-solid fa-book"></i> <span class="ms-1 d-none d-sm-inline">Books</span>
+                            </a>
+                           
+                        </li>
+                        <li>
+                            <a asp-action="Index" asp-controller="Author" href="#" class="nav-link px-0 align-middle">
+                                <i class="fa-solid fa-users text-dark"></i> <span class="ms-1 d-none d-sm-inline">Author</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-action="Index" asp-controller="Catogry" href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                                <i class="fa-sharp fa-solid fa-quote-right text-black"></i> <span class="ms-1 d-none d-sm-inline">Catogry</span>
+                            </a>
+                           
+                        </li>
+                        <li>
+                            <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span>
+                            </a>
+                           
+                        </li>
+                       
+                    </ul>
+                    <hr>
+                   
+            <div class="col py-3">
+                    
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+ *@
+
+
+    <div class="container m-4" style="max-height:auto; ">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+   
+
+    <footer class="border-top footer text-muted ">
+        <div class="container">
+            &copy; 2023 - bookstore1 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

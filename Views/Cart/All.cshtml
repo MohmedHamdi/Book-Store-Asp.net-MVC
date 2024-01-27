@@ -1,0 +1,66 @@
+﻿@using bookstore1.Models.Entity;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<Cart>
+@{
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+<div class="container ">
+
+
+    <h1 class="col-8">Custmor cart</h1>
+    @*  <a asp-controller="Item" asp-action="New" class="btn btn-outline-dark text-capitalize" style="margin:20px 50% 20px 0; "><i class="fa-light fa-trash"></i> &nbsp; Add New Item</a> *@
+    <table class="table table-striped ">
+        <thead class="bg-danger">
+            <tr>
+                <th scope="col">Titel</th>
+                <th scope="col">Price</th>
+                <th scope="col">count</th>
+                <th scope="col">Total</th>
+                <th scope="col">[ Update / Delet ]</th>
+
+
+
+
+            </tr>
+        </thead>
+        <tbody>
+          
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <th scope="row">@item.Titel</th>
+
+                    <td>@item.price</td>
+                    <td>@item.count</td>
+                    <td>@item.total</td>
+                   
+                   
+                    <td>
+                        <a asp-route-id="@item.CartId" asp-action="Edit" asp-controller="Cart" class="btn btn-outline-danger"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
+                        <a asp-action="Delet" asp-controller="Cart" asp-route-id="@item.CartId" class="btn btn-outline-dark"><i class="fa-solid fa-trash"></i></a>
+                    </td>
+
+                  
+                </tr>
+            }
+
+        </tbody>
+       
+        <tfoot>
+            @if (ViewBag.y>0)
+            {
+            <td  colspan="6"  style="font-size:20px; color:green; ">Toal = @ViewBag.y</td>
+            }
+          
+      </tfoot>
+
+    </table>
+    <a asp-action="New" asp-controller="books" style="margin-bottom:50px;" class="btn btn-outline-danger"><i class="fa-solid fa-plus m-1"></i>print</a>
+
+</div>
+
+

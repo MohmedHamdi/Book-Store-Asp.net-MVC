@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@using bookstore1.Models.Entity;
+@model Catogry
+@{
+    ViewData["Title"] = "New";
+}
+
+<form  style="margin:100px;" method="post">
+    <div class="container border cont border-danger ">
+
+        <h1 class="text-danger text-center">Add New Catgory</h1>
+       
+        <div class="form-group row m-4">
+            <label asp-for="CatogryName" class="col-sm-2 col-form-label col-form-label-sm text-danger">Name</label>
+            <div class="col-sm-8">
+                <input class="form-control form-control-sm " id="colFormLabelSm" placeholder="Enter Catogty of Book" asp-for="CatogryName">
+                <span asp-validation-for="CatogryName" class="text-black"></span>
+              
+            </div>
+           
+        </div>
+       
+                <hr />
+        <div class="form-group row m-4">
+
+                <button type="submit" class="btn btn-outline-danger m-1 save" style="width:150px" id="s">Save</button>
+
+                <a asp-controller="books" asp-action="Index" class="btn btn-outline-dark back" style="width:200px" id="b"><i class="fa-solid fa-backward m-1 "></i>Back to Books</a>
+              </div>
+            </div>
+      
+
+</form>
+
+

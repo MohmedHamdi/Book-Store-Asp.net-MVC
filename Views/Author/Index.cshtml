@@ -1,0 +1,54 @@
+﻿@using bookstore1.Models.Entity;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<Author>
+@{
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+<div class="container ">
+
+
+    <h1 class="col-8">Mange Author</h1>
+    @*  <a asp-controller="Item" asp-action="New" class="btn btn-outline-dark text-capitalize" style="margin:20px 50% 20px 0; "><i class="fa-light fa-trash"></i> &nbsp; Add New Item</a> *@
+    <table class="table table-striped ">
+        <thead class="bg-danger">
+            <tr>
+                <th scope="col">First-Name</th>
+                <th scope="col">Last-Name</th>
+                
+                <th scope="col">Update Or Delet</th>
+
+
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <th scope="row">@item.FirstName</th>
+
+                    <td>@item.LastName</td>
+                    <td>
+                        <a  asp-action="Edit" asp-controller="Author" asp-route-id="@item.AuthorId" class="btn btn-outline-danger"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
+                        <a asp-action="Delet" asp-controller="Author" asp-route-id="@item.AuthorId" class="btn btn-outline-dark"><i class="fa-solid fa-trash"></i></a>
+                    
+                    </td>
+
+
+
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+    <a style="margin-bottom:50px;" asp-action="New" asp-controller="Author" class="btn btn-outline-danger"><i class="fa-solid fa-plus m-1"></i>Add New Author</a>
+
+</div>
+
+
